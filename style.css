@@ -113,6 +113,18 @@ h3 { font-size: 19px; margin: 28px 0 8px; }
   margin: 0 0 32px;
 }
 
+/* На документах дата обновления — то, что ищут первым: выделяем её чипом,
+   но приглушённым, чтобы она не спорила с заголовком. */
+main > section > .updated:first-of-type {
+  display: inline-block;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 14px;
+}
+
+.landing main > section > .updated:first-of-type { background: none; padding: 0; }
+
 p { margin: 0 0 16px; }
 
 a { color: var(--bole); text-underline-offset: 3px; }

@@ -1,0 +1,246 @@
+/* Стили лендинга — поверх общего style.css.
+   Задача этих экранов: показать продукт, а не пересказать его текстом.
+   Поэтому здесь широкие полосы-секции, живые скриншоты в рамке телефона и
+   ровно один акцентный цвет — тот же болюсный красный, что в приложении. */
+
+.landing { max-width: 1080px; }
+
+/* --- герой ------------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 28px 0 8px;
+}
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.05fr 0.95fr; gap: 56px; padding: 48px 0 24px; }
+}
+
+.hero h1 {
+  font-size: clamp(36px, 7vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin: 0 0 18px;
+}
+
+.hero .lead {
+  font-size: clamp(18px, 2.4vw, 21px);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  margin: 0 0 26px;
+  max-width: 34em;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--bole);
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(181, 83, 60, 0.32);
+}
+
+.btn-primary:hover { transform: translateY(-1px); background: var(--bole-dark); }
+
+.btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--bole); color: var(--bole); }
+
+/* Клавиатурный фокус виден всегда: юридические страницы читают и с клавиатуры. */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--turquoise);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* --- рамка телефона ---------------------------------------------------- */
+
+.phone {
+  position: relative;
+  width: min(300px, 78vw);
+  margin: 0 auto;
+  border-radius: 44px;
+  padding: 10px;
+  background: linear-gradient(160deg, #2c2f33, #101113);
+  box-shadow: 0 30px 70px rgba(29, 49, 64, 0.28);
+}
+
+/* Скриншот показывается верхней частью: целиком экран телефона в макет не
+   помещается, а низ у всех экранов — нижняя навигация, ради которой высоту
+   отдавать незачем. */
+.phone img {
+  display: block;
+  width: 100%;
+  height: var(--shot-h, 560px);
+  object-fit: cover;
+  object-position: top;
+  border-radius: 34px;
+}
+
+/* Островок камеры: без него «телефон» читается как просто рамка. */
+.phone::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 22px;
+  border-radius: 999px;
+  background: #0b0c0d;
+}
+
+.phone-lg { width: min(320px, 78vw); }
+
+/* В герое кадр подстраивается под высоту окна: заголовок и кнопки обязаны
+   попадать на первый экран вместе с телефоном. */
+.hero .phone { --shot-h: min(58vh, 560px); }
+
+/* --- секции ------------------------------------------------------------ */
+
+.section { padding: 64px 0 8px; }
+
+.section-head { max-width: 46em; margin-bottom: 32px; }
+.section-head h2 { margin-top: 0; }
+.section-head p { color: var(--ink-muted); margin-bottom: 0; }
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 26px 0;
+}
+
+@media (min-width: 860px) {
+  .feature { grid-template-columns: 1fr 1fr; gap: 60px; padding: 44px 0; }
+  .feature.reverse .feature-text { order: 2; }
+}
+
+.feature-text h3 {
+  font-size: clamp(22px, 3vw, 28px);
+  margin: 0 0 12px;
+}
+
+.feature-text p { color: var(--ink-muted); margin-bottom: 12px; }
+
+.pain {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bole);
+  background: color-mix(in srgb, var(--bole) 12%, transparent);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+/* --- наборы ------------------------------------------------------------ */
+
+.kits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.kit {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 8px 28px rgba(29, 49, 64, 0.06);
+  border-left: 4px solid var(--kit, var(--bole));
+}
+
+.kit strong { display: block; margin-bottom: 4px; }
+.kit span { color: var(--ink-muted); font-size: 15px; }
+
+/* --- тёмная полоса доверия --------------------------------------------- */
+
+.trust {
+  margin: 72px 0 8px;
+  padding: 44px 28px;
+  border-radius: 28px;
+  background: linear-gradient(150deg, #23262a, #15171a);
+  color: #ece7e0;
+}
+
+@media (min-width: 860px) { .trust { padding: 56px 48px; } }
+
+.trust h2 { color: #fff; margin-top: 0; }
+.trust p { color: rgba(236, 231, 224, 0.78); max-width: 46em; }
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.trust-grid h3 { color: #fff; font-size: 18px; margin: 0 0 6px; }
+.trust-grid p { margin: 0; font-size: 15px; }
+
+/* Бейдж источника — тот же приём, что в приложении под каждым утверждением. */
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--turquoise);
+  border: 1px dashed color-mix(in srgb, var(--turquoise) 55%, transparent);
+  border-radius: 999px;
+  padding: 7px 14px;
+  margin-top: 6px;
+}
+
+/* --- «чего мы не делаем» ------------------------------------------------ */
+
+.honest {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.honest div {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: 0 8px 28px rgba(29, 49, 64, 0.06);
+}
+
+.honest strong { display: block; margin-bottom: 6px; }
+.honest span { color: var(--ink-muted); font-size: 15px; }
+
+/* --- финальный блок ----------------------------------------------------- */
+
+.closing {
+  text-align: center;
+  padding: 76px 0 16px;
+}
+
+.closing h2 { margin-bottom: 12px; }
+.closing p { color: var(--ink-muted); max-width: 34em; margin: 0 auto 24px; }
+
+/* Появление секций при скролле — выключается системной настройкой. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.shown { opacity: 1; transform: none; }
+}

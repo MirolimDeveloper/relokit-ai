@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Relokit AI — помощник по ВНЖ в Турции</title>
-<meta name="description" content="Relokit AI: какой тип ВНЖ подходит, какие документы нужны, что нельзя просрочить. Помощник для релокантов в Турции.">
+<title>Relokit AI — ВНЖ в Турции: шаги, сроки, документы</title>
+<meta name="description" content="Relokit AI подсказывает, какой ВНЖ подходит, считает сроки, которые нельзя просрочить, и объясняет турецкие бумаги по фотографии.">
 <meta name="theme-color" content="#b5533c">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Relokit AI — помощник по ВНЖ в Турции">
-<meta property="og:description" content="Какой тип ВНЖ подходит, какие документы нужны, что нельзя просрочить.">
+<meta property="og:title" content="Relokit AI — ВНЖ в Турции: шаги, сроки, документы">
+<meta property="og:description" content="Какой ВНЖ подходит, что нельзя просрочить и что написано в турецкой бумаге.">
 <meta property="og:image" content="https://mirolimdeveloper.github.io/relokit-ai/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon-32.png" sizes="32x32">
@@ -17,9 +17,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="landing.css">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap landing">
 
 <header>
   <a class="brand" href="index.html"><span class="mark">R</span> Relokit AI</a>
@@ -31,95 +32,328 @@
 
 <main>
 
+<!-- ------------------------------- РУССКИЙ ------------------------------- -->
 <section data-lang="ru" class="active">
-  <h1>Переезд в Турцию — по порядку</h1>
-  <p class="updated">Помощник по виду на жительство, срокам и документам</p>
 
-  <p>Relokit AI подсказывает, какой тип ВНЖ подходит именно вам, собирает
-  список документов и шагов, считает сроки, которые нельзя просрочить, и
-  объясняет турецкие бумаги на понятном языке.</p>
-
-  <div class="callout calm">
-    <p>Каждое утверждение в приложении подкреплено официальным источником и
-    датой сверки. Чего мы не знаем — так и говорим: «спросите в göç idaresi»,
-    и показываем адрес управления.</p>
+  <div class="hero">
+    <div>
+      <h1>Переезд в Турцию — по порядку</h1>
+      <p class="lead">Какой ВНЖ вам подходит, какие документы собрать, что нельзя
+      просрочить и что написано в турецкой бумаге. Всё в одном приложении — и
+      со ссылкой на официальный источник под каждым утверждением.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#screens">Посмотреть, как устроено</a>
+        <a class="btn btn-ghost" href="support.html">Написать нам</a>
+      </div>
+    </div>
+    <div class="phone phone-lg">
+      <img src="screens/01-today.png" width="640" height="1391"
+           alt="Главный экран: тип ВНЖ, ближайшие сроки и этап заявления">
+    </div>
   </div>
 
-  <h2>Что внутри</h2>
-  <div class="card">
-    <h3>Подбор типа ВНЖ</h3>
-    <p>По вашей ситуации — с основанием, источником и списком оснований, между
-    которыми можно выбирать.</p>
-  </div>
-  <div class="card">
-    <h3>Сроки, которые дорого пропустить</h3>
-    <p>Адресная регистрация, окно подачи на продление, срок пребывания по
-    вашему гражданству, ответ по заявлению.</p>
-  </div>
-  <div class="card">
-    <h3>Разбор бумаг по фото</h3>
-    <p>Письмо из göç idaresi, счёт, договор или ошибка на сайте e-ikamet —
-    что это и что делать дальше.</p>
+  <div class="section" id="screens">
+    <div class="section-head reveal">
+      <h2>Что оно решает</h2>
+      <p>Четыре ситуации, в которых люди теряют деньги и время чаще всего.</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="pain">Пропущенный срок</span>
+        <h3>Сроки, которые считаются сами</h3>
+        <p>Адресная регистрация — 20 рабочих дней с въезда. Окно подачи на
+        продление открывается за 60 дней. Разрешённый срок пребывания зависит
+        от гражданства: у россиянина 60 дней за поездку, у белоруса 30.</p>
+        <p>Приложение считает это от вашей даты въезда и показывает, сколько
+        осталось, — вместо того чтобы вы сверялись с таблицами.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/02-deadlines.png" width="640" height="1391" loading="lazy"
+             alt="Экран сроков: счётчик разрешённого пребывания и список дедлайнов">
+      </div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <span class="pain">Непонятная бумага</span>
+        <h3>Турецкий документ — по фотографии</h3>
+        <p>Письмо из göç idaresi, счёт, договор. Приложение объясняет, что это,
+        что от вас хотят и к какому числу, а найденную дату кладёт в трекер
+        сроков одной кнопкой.</p>
+        <p>Отдельно разбирается письмо об отказе: <em>ret</em> и
+        <em>eksik evrak</em> — разные события, и путать их нельзя.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/04-assistant.png" width="640" height="1391" loading="lazy"
+             alt="Экран ассистента с плитками: документы, отказ, разбор бланка, сканер">
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="pain">Ошибка на сайте e-ikamet</span>
+        <h3>Что значит турецкое сообщение системы</h3>
+        <p>«Mükerrer başvurunuz bulunmaktadır», «Seyahat belgesi bulunmuyor» —
+        сфотографируйте экран, и приложение скажет, что это значит и что
+        делать. Разбор берётся из справочника, а не сочиняется на ходу.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/05-errors.png" width="640" height="1391" loading="lazy"
+             alt="Расшифровщик ошибок e-ikamet: значение сообщения и что делать">
+      </div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <span class="pain">Основание не работает</span>
+        <h3>На чём держится ваш ВНЖ</h3>
+        <p>Туристическое основание продлевают не всем. Приложение показывает
+        все основания сразу — недвижимость, семья, учёба, работа, удалённая
+        работа — и отмечает, что по вашему профилю уже сходится, а чего не
+        хватает.</p>
+        <p>Чего мы не знаем — так и пишем: про доход и диплом приложение не
+        спрашивало и делать вид, что знает, не будет.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/06-bases.png" width="640" height="1391" loading="lazy"
+             alt="Экран оснований: условия каждого основания с отметками">
+      </div>
+    </div>
   </div>
 
-  <h2>Документы</h2>
-  <div class="nav-links">
-    <a href="privacy.html">Политика конфиденциальности</a>
-    <a href="terms.html">Условия использования</a>
+  <div class="trust reveal">
+    <h2>Почему этому можно верить</h2>
+    <p>Ошибка в требованиях к ВНЖ стоит человеку отказа, а иногда и запрета на
+    въезд. Поэтому приложение устроено так, чтобы не выдумывать.</p>
+    <div class="trust-grid">
+      <div>
+        <h3>Источник под каждым утверждением</h3>
+        <p>Закон, страница göç idaresi или таблица МИД — со ссылкой и датой,
+        когда мы её сверяли.</p>
+        <div class="source-badge">Проверено 5 авг. 2026 · goc.gov.tr</div>
+      </div>
+      <div>
+        <h3>«Не знаю» вместо выдумки</h3>
+        <p>Ассистент отвечает только по проверенной базе. Нет ответа — так и
+        говорит и отправляет в управление, показав его адрес.</p>
+      </div>
+      <div>
+        <h3>Практика помечена как практика</h3>
+        <p>То, что göç официально не публикует, показано с пометкой «требует
+        сверки», а не выдано за правило.</p>
+      </div>
+      <div>
+        <h3>Данные остаются у вас</h3>
+        <p>Профиль и сроки живут на устройстве, фотографии документов не
+        сохраняются нигде. Ни рекламы, ни аналитики.</p>
+      </div>
+    </div>
   </div>
 
-  <p>Вопросы и поддержка:
-  <a href="mailto:yadgarmira.com@gmail.com">yadgarmira.com@gmail.com</a>.</p>
+  <div class="section reveal">
+    <div class="section-head">
+      <h2>Переезд разложен на наборы</h2>
+      <p>Не лента статей, а пять наборов с прогрессом: видно, что сделано и что
+      осталось.</p>
+    </div>
+    <div class="kits">
+      <div class="kit" style="--kit:#b5533c"><strong>ВНЖ</strong><span>тип, документы, приём, продление</span></div>
+      <div class="kit" style="--kit:#2a9d8f"><strong>Жильё</strong><span>аренда, договор, адресная регистрация</span></div>
+      <div class="kit" style="--kit:#c8963e"><strong>Деньги</strong><span>vergi numarası, счёт, налоги</span></div>
+      <div class="kit" style="--kit:#5b8def"><strong>Быт</strong><span>симка, e-Devlet, медицина, права</span></div>
+      <div class="kit" style="--kit:#9b5de5"><strong>Семья</strong><span>документы супруга и детей, школа</span></div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="section-head">
+      <h2>Чего мы не делаем</h2>
+      <p>Честно, чтобы не было лишних ожиданий.</p>
+    </div>
+    <div class="honest">
+      <div><strong>Не оформляем ВНЖ за вас</strong><span>Заявление подаёте вы, решение принимает göç idaresi.</span></div>
+      <div><strong>Не даём юридических консультаций</strong><span>Это справочный сервис. За правовой оценкой — к адвокату.</span></div>
+      <div><strong>Не подбираем посредников</strong><span>Ни юристов, ни агентств: в Турции такое посредничество запрещено законом.</span></div>
+      <div><strong>Не обещаем результат</strong><span>Никто не может гарантировать выдачу разрешения. Мы помогаем не ошибиться.</span></div>
+    </div>
+  </div>
+
+  <div class="closing reveal">
+    <h2>Вопросы?</h2>
+    <p>Напишите — отвечаем в течение двух рабочих дней. Особенно ждём письма
+    о неточностях: они попадают в базу быстрее всего.</p>
+    <a class="btn btn-primary" href="support.html">Поддержка и частые вопросы</a>
+  </div>
 </section>
 
+<!-- ------------------------------- ENGLISH ------------------------------- -->
 <section data-lang="en">
-  <h1>Moving to Türkiye, step by step</h1>
-  <p class="updated">A companion for residence permits, deadlines and documents</p>
 
-  <p>Relokit AI suggests which residence permit fits your situation, gathers the
-  list of documents and steps, counts the deadlines you cannot miss, and
-  explains Turkish paperwork in plain language.</p>
-
-  <div class="callout calm">
-    <p>Every statement in the app is backed by an official source and a
-    verification date. What we do not know, we say plainly: “ask göç idaresi” —
-    and show you the office address.</p>
+  <div class="hero">
+    <div>
+      <h1>Moving to Türkiye, step by step</h1>
+      <p class="lead">Which permit fits you, what documents to gather, what you
+      must not miss, and what that Turkish letter actually says. All in one
+      app — with an official source under every statement.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#screens-en">See how it works</a>
+        <a class="btn btn-ghost" href="support.html">Contact us</a>
+      </div>
+    </div>
+    <div class="phone phone-lg">
+      <img src="screens/01-today.png" width="640" height="1391"
+           alt="Home screen: permit type, upcoming deadlines and application stage">
+    </div>
   </div>
 
-  <h2>What is inside</h2>
-  <div class="card">
-    <h3>Permit type guidance</h3>
-    <p>Based on your situation — with the legal ground, the source, and the
-    list of alternatives you can choose between.</p>
-  </div>
-  <div class="card">
-    <h3>Deadlines that cost dearly</h3>
-    <p>Address registration, the renewal window, your permitted stay by
-    citizenship, the decision deadline on your application.</p>
-  </div>
-  <div class="card">
-    <h3>Documents explained from a photo</h3>
-    <p>A letter from göç idaresi, a bill, a contract, or an error on the
-    e-ikamet site — what it is and what to do next.</p>
+  <div class="section" id="screens-en">
+    <div class="section-head reveal">
+      <h2>What it solves</h2>
+      <p>The four situations where people lose money and time most often.</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="pain">A missed deadline</span>
+        <h3>Deadlines that count themselves</h3>
+        <p>Address registration — 20 working days from entry. The renewal window
+        opens 60 days before expiry. The permitted stay depends on citizenship:
+        60 days per visit for Russians, 30 for Belarusians.</p>
+        <p>The app counts all of it from your entry date and shows what is
+        left — instead of you cross-checking tables.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/02-deadlines.png" width="640" height="1391" loading="lazy"
+             alt="Deadlines screen: permitted stay counter and the list of deadlines">
+      </div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <span class="pain">Paperwork you cannot read</span>
+        <h3>A Turkish document from a photo</h3>
+        <p>A letter from göç idaresi, a bill, a contract. The app explains what
+        it is, what is expected of you and by when — and puts the date it finds
+        into your deadline tracker in one tap.</p>
+        <p>Refusal letters get their own screen: <em>ret</em> and
+        <em>eksik evrak</em> are different events and must not be confused.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/04-assistant.png" width="640" height="1391" loading="lazy"
+             alt="Assistant screen with tiles: documents, refusal, form guide, scanner">
+      </div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <span class="pain">An error on e-ikamet</span>
+        <h3>What that system message means</h3>
+        <p>“Mükerrer başvurunuz bulunmaktadır”, “Seyahat belgesi bulunmuyor” —
+        photograph the screen and the app tells you what it means and what to
+        do. The explanation comes from a catalogue, not from guesswork.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/05-errors.png" width="640" height="1391" loading="lazy"
+             alt="e-ikamet error decoder: what the message means and what to do">
+      </div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <span class="pain">Your grounds stop working</span>
+        <h3>What your permit rests on</h3>
+        <p>Tourism grounds are not renewed for everyone. The app shows every
+        basis at once — property, family, study, work, remote work — and marks
+        what already fits your profile and what is missing.</p>
+        <p>What we do not know, we say: the app never asked about your income
+        or degree and will not pretend otherwise.</p>
+      </div>
+      <div class="phone">
+        <img src="screens/06-bases.png" width="640" height="1391" loading="lazy"
+             alt="Grounds screen: conditions of each basis with marks">
+      </div>
+    </div>
   </div>
 
-  <h2>Documents</h2>
-  <div class="nav-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Use</a>
+  <div class="trust reveal">
+    <h2>Why you can trust this</h2>
+    <p>A mistake about permit requirements costs a refusal, sometimes an entry
+    ban. So the app is built not to invent.</p>
+    <div class="trust-grid">
+      <div>
+        <h3>A source under every statement</h3>
+        <p>The law, a göç idaresi page or the MFA table — with a link and the
+        date we verified it.</p>
+        <div class="source-badge">Verified 5 Aug 2026 · goc.gov.tr</div>
+      </div>
+      <div>
+        <h3>“I don't know” instead of invention</h3>
+        <p>The assistant answers only from a verified base. No answer — it says
+        so and sends you to the office, address included.</p>
+      </div>
+      <div>
+        <h3>Practice marked as practice</h3>
+        <p>What göç does not publish officially is shown as “needs
+        verification”, not passed off as a rule.</p>
+      </div>
+      <div>
+        <h3>Your data stays yours</h3>
+        <p>Profile and deadlines live on the device, document photos are stored
+        nowhere. No ads, no analytics.</p>
+      </div>
+    </div>
   </div>
 
-  <p>Questions and support:
-  <a href="mailto:yadgarmira.com@gmail.com">yadgarmira.com@gmail.com</a>.</p>
+  <div class="section reveal">
+    <div class="section-head">
+      <h2>Relocation split into kits</h2>
+      <p>Not a feed of articles but five kits with progress: you see what is
+      done and what is left.</p>
+    </div>
+    <div class="kits">
+      <div class="kit" style="--kit:#b5533c"><strong>Permit</strong><span>type, documents, appointment, renewal</span></div>
+      <div class="kit" style="--kit:#2a9d8f"><strong>Home</strong><span>rent, contract, address registration</span></div>
+      <div class="kit" style="--kit:#c8963e"><strong>Money</strong><span>vergi numarası, bank account, taxes</span></div>
+      <div class="kit" style="--kit:#5b8def"><strong>Daily life</strong><span>SIM, e-Devlet, healthcare, licence</span></div>
+      <div class="kit" style="--kit:#9b5de5"><strong>Family</strong><span>spouse and children documents, school</span></div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="section-head">
+      <h2>What we do not do</h2>
+      <p>Plainly, so there are no false expectations.</p>
+    </div>
+    <div class="honest">
+      <div><strong>We do not obtain permits for you</strong><span>You file the application; göç idaresi decides.</span></div>
+      <div><strong>We give no legal advice</strong><span>This is a reference service. For legal assessment, see an attorney.</span></div>
+      <div><strong>We recommend no intermediaries</strong><span>Neither lawyers nor agencies: such brokerage is prohibited by Turkish law.</span></div>
+      <div><strong>We promise no outcome</strong><span>Nobody can guarantee a permit. We help you avoid mistakes.</span></div>
+    </div>
+  </div>
+
+  <div class="closing reveal">
+    <h2>Questions?</h2>
+    <p>Write to us — we reply within two business days. We especially welcome
+    reports of inaccuracies: those reach the knowledge base fastest.</p>
+    <a class="btn btn-primary" href="support.html">Support and FAQ</a>
+  </div>
 </section>
 
 </main>
 
 <footer>
+  <div class="nav-links">
+    <a href="privacy.html">Политика конфиденциальности / Privacy</a>
+    <a href="terms.html">Условия использования / Terms</a>
+    <a href="support.html">Поддержка / Support</a>
+  </div>
   <p>© 2026 Relokit AI</p>
 </footer>
 
 </div>
 <script src="lang.js"></script>
+<script src="reveal.js"></script>
 </body>
 </html>
