@@ -5,11 +5,16 @@
   var supported = ['ru', 'en'];
 
   function pick() {
+    // Порядок важен: явная ссылка сильнее прошлого выбора. Иначе человек,
+    // которому дали `?lang=en`, видел русскую страницу только потому, что
+    // когда-то нажимал «RU» — и никакая ссылка это не переубеждала.
+    var url = new URLSearchParams(location.search).get('lang');
+    if (supported.indexOf(url) >= 0) return url;
+
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch (e) { /* приватный режим */ }
     if (supported.indexOf(saved) >= 0) return saved;
-    var url = new URLSearchParams(location.search).get('lang');
-    if (supported.indexOf(url) >= 0) return url;
+
     return (navigator.language || 'ru').toLowerCase().indexOf('ru') === 0
       ? 'ru'
       : 'en';
