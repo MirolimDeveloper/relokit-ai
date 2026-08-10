@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mirolimdeveloper.github.io/relokit-ai/sitemap.xml
