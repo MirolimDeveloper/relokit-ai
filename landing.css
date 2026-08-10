@@ -10,9 +10,9 @@
 .hero {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 26px;
   align-items: center;
-  padding: 28px 0 8px;
+  padding: 12px 0 8px;
 }
 
 @media (min-width: 900px) {
@@ -30,11 +30,18 @@
   font-size: clamp(18px, 2.4vw, 21px);
   line-height: 1.55;
   color: var(--ink-muted);
-  margin: 0 0 26px;
+  margin: 0 0 22px;
   max-width: 34em;
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+/* На узком экране две кнопки в ряд не помещаются и переносятся вразнобой:
+   ставим их в столбик во всю ширину — так очевиднее, куда нажимать. */
+@media (max-width: 559px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+}
 
 .btn {
   display: inline-flex;
@@ -54,10 +61,14 @@
   box-shadow: 0 10px 26px rgba(181, 83, 60, 0.32);
 }
 
-.btn-primary:hover { transform: translateY(-1px); background: var(--bole-dark); }
-
 .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--bole); color: var(--bole); }
+
+/* Только под мышью: на тач-экране :hover залипает после тапа, и кнопка
+   остаётся «поднятой» до следующего касания в стороне. */
+@media (hover: hover) {
+  .btn-primary:hover { transform: translateY(-1px); background: var(--bole-dark); }
+  .btn-ghost:hover { border-color: var(--bole); color: var(--bole); }
+}
 
 /* Клавиатурный фокус виден всегда: юридические страницы читают и с клавиатуры. */
 a:focus-visible, button:focus-visible {
@@ -70,10 +81,10 @@ a:focus-visible, button:focus-visible {
 
 .phone {
   position: relative;
-  width: min(300px, 78vw);
+  width: min(300px, 66vw);
   margin: 0 auto;
-  border-radius: 44px;
-  padding: 10px;
+  border-radius: 36px;
+  padding: 8px;
   background: linear-gradient(160deg, #2c2f33, #101113);
   box-shadow: 0 30px 70px rgba(29, 49, 64, 0.28);
 }
@@ -84,48 +95,65 @@ a:focus-visible, button:focus-visible {
 .phone img {
   display: block;
   width: 100%;
-  height: var(--shot-h, 560px);
+  height: var(--shot-h, 400px);
   object-fit: cover;
   object-position: top;
-  border-radius: 34px;
+  border-radius: 29px;
 }
 
 /* Островок камеры: без него «телефон» читается как просто рамка. */
 .phone::after {
   content: "";
   position: absolute;
-  top: 20px;
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 84px;
-  height: 22px;
+  width: 70px;
+  height: 18px;
   border-radius: 999px;
   background: #0b0c0d;
 }
 
-.phone-lg { width: min(320px, 78vw); }
+.phone-lg { width: min(320px, 74vw); }
 
 /* В герое кадр подстраивается под высоту окна: заголовок и кнопки обязаны
-   попадать на первый экран вместе с телефоном. */
-.hero .phone { --shot-h: min(58vh, 560px); }
+   попадать на первый экран вместе с телефоном.
+   На телефоне это `svh`, а не `vh`: `vh` на iOS считается по окну без адресной
+   строки, и с показанной строкой низ кадра уезжает за край экрана. */
+.hero .phone { --shot-h: min(46vh, 420px); }
+
+@supports (height: 1svh) {
+  .hero .phone { --shot-h: min(46svh, 420px); }
+}
+
+/* С 860px макет становится двухколоночным, и рамке снова есть где развернуться. */
+@media (min-width: 860px) {
+  .phone { width: 300px; border-radius: 44px; padding: 10px; --shot-h: 560px; }
+  .phone img { border-radius: 34px; }
+  .phone::after { top: 20px; width: 84px; height: 22px; }
+  .phone-lg { width: 320px; }
+  .hero .phone { --shot-h: min(58vh, 560px); }
+}
 
 /* --- секции ------------------------------------------------------------ */
 
-.section { padding: 64px 0 8px; }
+.section { padding: 40px 0 8px; }
 
-.section-head { max-width: 46em; margin-bottom: 32px; }
+.section-head { max-width: 46em; margin-bottom: 22px; }
 .section-head h2 { margin-top: 0; }
 .section-head p { color: var(--ink-muted); margin-bottom: 0; }
 
 .feature {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 22px;
   align-items: center;
-  padding: 26px 0;
+  padding: 18px 0;
 }
 
 @media (min-width: 860px) {
+  .section { padding: 64px 0 8px; }
+  .section-head { margin-bottom: 32px; }
   .feature { grid-template-columns: 1fr 1fr; gap: 60px; padding: 44px 0; }
   .feature.reverse .feature-text { order: 2; }
 }
@@ -152,16 +180,23 @@ a:focus-visible, button:focus-visible {
 
 /* --- наборы ------------------------------------------------------------ */
 
+/* На телефоне наборы идут в столбик: в двух колонках по 169px подпись
+   «vergi numarası, счёт, налоги» ломается на три строки, а пятый набор висит
+   половинкой в последнем ряду. */
 .kits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 560px) {
+  .kits { grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 12px; }
 }
 
 .kit {
   background: var(--surface);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 14px 16px;
   box-shadow: 0 8px 28px rgba(29, 49, 64, 0.06);
   border-left: 4px solid var(--kit, var(--bole));
 }
@@ -169,27 +204,35 @@ a:focus-visible, button:focus-visible {
 .kit strong { display: block; margin-bottom: 4px; }
 .kit span { color: var(--ink-muted); font-size: 15px; }
 
+@media (min-width: 560px) { .kit { padding: 18px; } }
+
 /* --- тёмная полоса доверия --------------------------------------------- */
 
+/* Свои поля полосы складываются с полями body: на телефоне 28 + 20 оставляли
+   тексту 279px из 375, и колонка выходила уже, чем в остальных секциях. */
 .trust {
-  margin: 72px 0 8px;
-  padding: 44px 28px;
-  border-radius: 28px;
+  margin: 44px 0 8px;
+  padding: 26px 20px;
+  border-radius: 24px;
   background: linear-gradient(150deg, #23262a, #15171a);
   color: #ece7e0;
 }
 
-@media (min-width: 860px) { .trust { padding: 56px 48px; } }
+@media (min-width: 860px) {
+  .trust { margin: 72px 0 8px; padding: 56px 48px; border-radius: 28px; }
+}
 
 .trust h2 { color: #fff; margin-top: 0; }
 .trust p { color: rgba(236, 231, 224, 0.78); max-width: 46em; }
 
 .trust-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-  margin-top: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 18px;
+  margin-top: 22px;
 }
+
+@media (min-width: 860px) { .trust-grid { gap: 22px; margin-top: 28px; } }
 
 .trust-grid h3 { color: #fff; font-size: 18px; margin: 0 0 6px; }
 .trust-grid p { margin: 0; font-size: 15px; }
@@ -211,7 +254,8 @@ a:focus-visible, button:focus-visible {
 
 .honest {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  /* min(…, 100%) — чтобы на 320px колонка не оказалась шире контейнера. */
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
   gap: 14px;
 }
 
@@ -229,8 +273,10 @@ a:focus-visible, button:focus-visible {
 
 .closing {
   text-align: center;
-  padding: 76px 0 16px;
+  padding: 48px 0 16px;
 }
+
+@media (min-width: 860px) { .closing { padding: 76px 0 16px; } }
 
 .closing h2 { margin-bottom: 12px; }
 .closing p { color: var(--ink-muted); max-width: 34em; margin: 0 auto 24px; }
