@@ -112,6 +112,21 @@
   </div>
 
   <div class="card">
+    <h3>Уведомления о смене правил</h3>
+    <p>Напоминания о ваших сроках приложение считает <strong>на самом
+    телефоне</strong> и никуда для этого не обращается: даты ваших дедлайнов
+    сервер не знает и знать не может.</p>
+    <p>Отдельно от них есть рассылка о том, чего телефон знать не может, —
+    изменились правила göç idaresi, вышла нужная функция. Для неё используется
+    <a href="https://onesignal.com/privacy_policy" rel="noopener">OneSignal</a>:
+    ему передаётся <strong>токен уведомлений</strong>, который выдаёт Apple, и
+    <strong>язык интерфейса</strong>, чтобы сообщение пришло на понятном вам
+    языке. Больше ничего: ни имени, ни профиля, ни города, ни ваших сроков.</p>
+    <p>Рассылка выключается в <strong>Профиле</strong> отдельным
+    переключателем — напоминания о сроках при этом продолжают приходить.</p>
+  </div>
+
+  <div class="card">
     <h3>Идентификатор установки</h3>
     <p>Вместе с запросом к ассистенту или сканеру и с сообщением о завершении
     настройки передаётся случайный номер установки — он создаётся при первом запуске и нужен ровно для одного:
@@ -135,7 +150,8 @@
     имени собственника там нет.</p>
   </div>
 
-  <p>Обработку выполняют два поставщика: <a href="https://supabase.com/privacy"
+  <p>Обработку выполняют два поставщика (рассылка — третий, см. выше):
+  <a href="https://supabase.com/privacy"
   rel="noopener">Supabase</a> (серверная функция, регион ЕС) и
   <a href="https://openai.com/policies/privacy-policy" rel="noopener">OpenAI</a>
   (распознавание и формулировка ответа). Данные передаются им только в момент
@@ -257,6 +273,22 @@
   </div>
 
   <div class="card">
+    <h3>Notifications about rule changes</h3>
+    <p>Reminders about your own deadlines are computed <strong>on the phone
+    itself</strong> and require no server at all: your deadline dates are
+    something the server neither knows nor can know.</p>
+    <p>Separately there is a broadcast about things the phone cannot know — göç
+    idaresi changed the rules, a needed feature shipped. It uses
+    <a href="https://onesignal.com/privacy_policy" rel="noopener">OneSignal</a>:
+    it receives the <strong>notification token</strong> issued by Apple and your
+    <strong>interface language</strong>, so the message arrives in a language you
+    read. Nothing else — no name, no profile, no city, none of your
+    deadlines.</p>
+    <p>The broadcast is turned off in <strong>Profile</strong> with its own
+    switch; reminders about deadlines keep coming.</p>
+  </div>
+
+  <div class="card">
     <h3>Installation identifier</h3>
     <p>A random installation number is sent with each request to the assistant
     or the scanner, and with the setup-finished message. It is created on first launch and serves exactly one
@@ -281,7 +313,7 @@
     summary are passed on: neither the address nor the owner's name.</p>
   </div>
 
-  <p>Two providers process the request:
+  <p>Two providers process the request (the broadcast adds a third, see above):
   <a href="https://supabase.com/privacy" rel="noopener">Supabase</a> (the server
   function, EU region) and
   <a href="https://openai.com/policies/privacy-policy" rel="noopener">OpenAI</a>
