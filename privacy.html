@@ -76,10 +76,12 @@
     чтобы ответ был про вас, а не вообще — снимок того, что приложение о вас
     знает: гражданство, город, цель пребывания, тип и срок вида на жительство,
     срок паспорта, состав семьи, ближайшие сроки, этап заявления и прогресс по
-    шагам. Имя, если вы его указали, и номер паспорта не передаются:
+    шагам. Если вопрос о поездках, к ним добавляются даты записанных вами
+    поездок и посчитанные по ним дни — их берёт сам ассистент, когда без них не
+    ответить. Имя, если вы его указали, и номер паспорта не передаются:
     имя ничего не решает в ответе (оно уходит один раз — в сообщении о начале
-    пользования, см. ниже), а паспорт приложение не спрашивает вовсе. Ничего
-    из перечисленного на сервере не сохраняется.</p>
+    пользования, см. ниже), а номер паспорта из досье ассистенту не уходит
+    никогда. Ничего из перечисленного на сервере не сохраняется.</p>
     <p>Если вы только что разбирали бумагу, вместе с вопросом передаётся и её
     разбор — тип документа, краткое объяснение и прочитанный срок: без этого
     ассистент отвечал бы, не зная, о чём вы спрашиваете. Сама фотография не
@@ -314,10 +316,13 @@
     conversation and — so the answer is about you rather than generic — a
     snapshot of what the app knows about you: citizenship, city, purpose of
     stay, permit type and expiry, passport expiry, family situation, upcoming
-    deadlines, application stage and step progress. Your name, if you gave one, and your passport
+    deadlines, application stage and step progress. If the question is about
+    travel, the dates of the trips you recorded and the days counted from them
+    are added — the assistant fetches them only when it cannot answer without
+    them. Your name, if you gave one, and your passport
     number are not sent: the name decides nothing in the answer (it travels
     once, in the message about you starting to use the app — see below), and
-    the app never asks for the passport number at all. None of this
+    the passport number from your dossier never goes to the assistant. None of this
     is stored on the server.</p>
     <p>If you have just had a paper explained, its result travels with the
     question too — document type, the short explanation and any deadline read
